@@ -4,29 +4,28 @@ import ReactDom from "react-dom";
 //stateless functional component
 //always return JSX
 
-function Greeting()
+function BookList()
 {
   return (
-    <div>
-      <div>
-        <Person/>
-        <Message/>
-        <h3>Card Title</h3>
-      </div>
-      <div>
-        <a href='#'>Profile</a>
-      </div>
-    </div>
+    <section>
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
-const Person = () => <h2>FirstName LastName</h2>
-const Message = () => {
-  return <p>This is the profile picture</p>
+const Book = () => {
+  return (
+    <article>
+      <Image></Image>
+      <Title></Title>
+      <Author></Author>
+    </article>)
 }
 
-/* const Greeting = () => {
-  return React.createElement('div', {}, React.createElement('h1', {}, 'Hello world'));
-} */
+const Image = () => <img src="https://i.pinimg.com/474x/e7/2e/f3/e72ef3c21388b3c724845caf9cf19d40.jpg" alt="" />
+const Title = () => <h1>Ikigai: The Japanese secret to a long and happy life</h1>
+const Author = () => <h3>Hector Garcia</h3>
 
-ReactDom.render(<Greeting/>, document.getElementById("root")) 
+ReactDom.render(<BookList/>, document.getElementById("root")) 
